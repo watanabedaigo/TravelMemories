@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TravelMemories</title>
+  
+   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- 自サイトのCSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!-- Magnific PopupのCSS-->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  
+  <!--fontAwesomeのCDN-->
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body onload="onload();">
+  <!--ヘッダー-->
+  <header>
+    <div id="header-container">
+      <p class="title"><a href="index.html" class="back" style="color:black; text-decoration:none;">TravelMemories</a></p>
+      <form id="logout-form" class="mr-1">
+        <!--ログイン時のみ表示-->
+        <a href="index.html" id="logout-button" class="btn btn-success"　style="color:white; text-decoration:none;">ログアウト</a>
+      </form>
+    </div>
+  </header>
+  
+  <!--メイン-->
+  <section id="main">
+    <!--旅行先名-->
+    <div class="mb-2">
+      <p id="travel-name" class="m-0"></p>
+    </div>
+    
+    <!--表示部分-->
+    <div class="mb-3">
+      <!--画像表示-->
+      <div class="mb-2">
+        <div id="photo-table">
+          <h5 id="for-limitphotos">写真一覧（最新12件）<button class="btn btn-secondary show-all-button" id="show-allphotos-button">全件表示</button></h5>
+          <h5 id="for-allphotos">写真一覧（全件表示）<button class="btn btn-secondary show-limit-button" id="show-limitphotos-button">最新12件表示</button></h5>
+        </div>
+        <div id="upload-image-preview" class="row"></div>
+      </div>
+      <!--コメント表示-->
+      <div>
+        <div id="comment-table">
+          <h5 id="for-limitcomments">投稿一覧（最新10件）<button class="btn btn-secondary show-all-button" id="show-allcomments-button">全件表示</button></h5>
+          <h5 id="for-allcomments">投稿一覧（全件表示）<button class="btn btn-secondary show-limit-button" id="show-limitcomments-button">最新10件表示</button></h5>
+        </div>
+        <div id="comment-list"></div>
+      </div>
+    </div>
+    
+    <!--入力フォーム-->
+    <div>
+      <!--コメントの追加-->
+      <div>
+        <form id="comment-form">
+          <p class="mb-1">コメント</p>
+          <div class="row">
+            <div class="form-group col-12">
+              <textarea class="form-control" id="add-comment" rows="3" placeholder="旅行先の良かった所を教えてください！"></textarea>
+              <button type="submit" class="btn btn-secondary btn-block">追加する</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!--写真の追加-->
+      <div>
+        <form id="image-form">
+          <p class="mb-1">写真＆コメント</p>
+          <div class="row">
+            <div class="input-group col-12">
+              <label class="input-group-btn">
+                <span class="btn btn-primary">
+                  選択<input type="file" multiple="multiple" accept=".jpg,.jpeg,.png,.gif, image/jpeg,image/png,image/gif" id="upload-image" style="display:none">
+                </span>
+              </label>
+              <input type="text" class="form-control" id="upload-image-title" value="ファイルが選択されていません" readonly>
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" id="add-image-comment" rows="1" placeholder="写真の場所を教えてください！"></textarea>
+              <button type="submit" class="btn btn-secondary btn-block">追加する</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBhQhuAb27wQEspmBFy4cXhMKKCKa_bOK8",
+      authDomain: "your-memories-dd52e.firebaseapp.com",
+      databaseURL: "https://your-memories-dd52e.firebaseio.com",
+      projectId: "your-memories-dd52e",
+      storageBucket: "your-memories-dd52e.appspot.com",
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

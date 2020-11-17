@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TravelMemories</title>
+  
+   <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- 自サイトのCSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  
+  <!--fontAwesomeのCDN-->
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  <!--ヘッダー-->
+  <header>
+    <div id="header-container">
+      <p class="title"><a href="index.html" class="back" style="color:black; text-decoration:none;">TravelMemories</a></p>
+      <form id="logout-form" class="mr-1">
+        <!--ログイン時のみ表示-->
+        <a href="index.html" id="logout-button" class="btn btn-success"　style="color:white; text-decoration:none;">ログアウト</a>
+      </form>
+    </div>
+  </header>
+  
+  <!--ログアウト時の表示-->
+  <section class="visible-on-logout">
+    <h3 class="text-center mt-4">ログイン</h3>
+    <div class="row justify-content-center">
+      <div class="col-sm-10 col-md-8 col-lg-6">
+        <!--ログインフォーム-->
+        <form id="login-form">
+          <div class="form-group login__email">
+            <label for="user-mail" class="col-form-label">メールアドレス:</label>
+            <input type="email" id="user-mail" class="form-control"><br>
+          </div>
+          <div class="form-group login__password">
+            <label for="user-pass" class="col-form-label">パスワード:</label>
+            <input type="password" id="user-pass" class="form-control"><br>
+          </div>
+          <div class="form-group login__submit">
+            <div>
+              <button type="submit" class="btn btn-success">ログイン</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!--ログイン寺の表示-->
+  <section class="visible-on-login">
+    <!--トップページ画像-->
+    <div class="top-image">
+      <img src="img/top-image.jpg" class="top-image-photo"></img>
+      <p class="top-image-message"><nobr>最高の旅へ。<wbr>思い出を共有しよう</nobr></p>
+    </div>
+    
+    <div id="main">
+      <!--ニックネームがない場合の表示-->
+      <div class="visible-on-nothave-nickname">
+        <p>旅行掲示板へようこそ！まずはニックネームを決めよう！</p>
+        <!--ニックネーム入力フォーム-->
+        <form id="nickname-form">
+          <div class="row mb-2">
+            <div class="col-lg-5 mb-2">
+              <input type="text" id="add-nickname" class="form-control" placeholder="ニックネームを入力">
+            </div>
+            <div class="col-lg-2">
+              <button type="submit" class="btn btn-secondary btn-block">決定</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+      <!--ニックネームがある場合の表示-->
+      <!--<div class="visible-on-have-nickname">-->
+      <!--  <div id="show-nickname"></div>-->
+      <!--</div>-->
+
+      <!--旅行先の追加、表示-->
+      <div class="travel-show mt-4">
+        <div>
+          <h5>旅行先追加</h5>
+          <!--旅行先入力フォーム-->
+          <form id="travel-form">
+            <div class="row mb-2">
+              <div class="col-lg-1">
+                <label for="add-travel" class="col-form-label">旅行先</label>
+              </div>
+              <div class="col-lg-5">
+                <input type="text" id="add-travel" class="form-control" placeholder="旅行先を入力">
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-lg-1">
+                <label for="add-travel-furigana" class="col-form-label">ふりがな</label>
+              </div>
+              <div class="col-lg-5 mb-2">
+                <input type="text" id="add-travel-furigana" class="form-control" placeholder="読みを入力">
+              </div>
+              <div class="col-lg-2">
+                <button type="submit" class="btn btn-secondary btn-block">追加</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        
+        <!--旅行先表示-->
+        <div class="mt-4">
+          <h5>旅行先一覧</h5>
+          <div class="row">
+            <div id="travel-list-a" class="mb-2 pr-0 col-lg-2 col-md-3 col-12">あ行</div>
+            <div id="travel-list-ka" class="mb-2 pr-0 col-lg-2 col-md-3 col-12">か行</div>
+            <div id="travel-list-sa" class="mb-2 pr-0 col-lg-2 col-md-3 col-12">さ行</div>
+            <div id="travel-list-ta" class="mb-2 pr-0 col-lg-2 col-md-3 col-12">た行</div>
+            <div id="travel-list-na" class="mb-2 pr-0 col-lg-2 col-md-3 col-12">な行</div>
+            <div id="travel-list-ha" class="mb-2 pr-0 col-lg-2 col-md-3 col-12">は行</div>
+            <div id="travel-list-ma" class="mb-2 pr-0 col-lg-2 col-md-3 col-12">ま行</div>
+            <div id="travel-list-ya" class="mb-2 pr-0 col-lg-2 col-md-3 col-12">や行</div>
+            <div id="travel-list-ra" class="mb-2 pr-0 col-lg-2 col-md-3 col-12">ら行</div>
+            <div id="travel-list-wa" class="mb-2 pr-0 col-lg-2 col-md-3 col-12">わ行</div>
+          </div>
+        </div>
+      </div>
+    
+    </div>  
+  </section>
+  
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBhQhuAb27wQEspmBFy4cXhMKKCKa_bOK8",
+      authDomain: "your-memories-dd52e.firebaseapp.com",
+      databaseURL: "https://your-memories-dd52e.firebaseio.com",
+      projectId: "your-memories-dd52e",
+      storageBucket: "your-memories-dd52e.appspot.com",
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
