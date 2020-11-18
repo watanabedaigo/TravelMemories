@@ -455,12 +455,13 @@ $('#comment-form').on('submit',(e) => {
     .then(() => {
       console.log('データの保存に成功');
       resetCommentForm();
+      loadComment();
     })
     .catch((error) => {
       console.error('データの保存に失敗しました',error);
     });
   
-  loadComment();
+  // loadComment();
 });
 
 $(document).on('click','.comment-delete-button',(e) => {
@@ -476,18 +477,20 @@ $(document).on('click','.comment-delete-button',(e) => {
     .remove()
     .then(() => {
       console.log('Realtimedatabase上からデータを削除');
-      $(e.target).parent().remove();
+      $(e.target).parent().parent().remove();
       console.log('表示しているDOM要素を削除');
       
       loadComment();
     });
 });
 
-$('#show-allcomments-button').on('click',() => {
+$('#show-allcomments-button').on('click',(e) => {
   resetComment();
+
+  console.log('click show-allcomments-button');
   
-  $('#for-limitcomments').hide();
   $('#for-allcomments').show();
+  $('#for-limitcomments').hide();
   
   let url_string = location.href; 
   let url = new URL(url_string);　
@@ -496,20 +499,19 @@ $('#show-allcomments-button').on('click',() => {
   const commentsRef = firebase
     .database()
     .ref('comments/' + id);
-  
-  commentsRef.orderByChild('createdAt').on('child_added',(commentSnapshot) => {
-    // console.log('by click show-allcomments-button');
-    const commentId = commentSnapshot.key;
-    const commentData = commentSnapshot.val();
-    addComment(commentId,commentData);
-    
+
+  commentsRef.orderByChild('createdAt').once('value', function(commentSnapshot) {
+    commentSnapshot.forEach(function(childSnapshot) {
+      const commentId = childSnapshot.key;
+      const commentData = childSnapshot.val();
+      addComment(commentId,commentData);
+    });
     commentScroll();
   });
 });
 
-$('#show-limitcomments-button').on('click',() => {
+$('#show-limitcomments-button').on('click',(e) => {
   loadComment();
-
   commentScroll();
 });
 
