@@ -491,6 +491,7 @@ $('#show-allcomments-button').on('click',(e) => {
   
   $('#for-allcomments').show();
   $('#for-limitcomments').hide();
+  $('#for-allcomments').show();
   
   let url_string = location.href; 
   let url = new URL(url_string);　
