@@ -1,8 +1,8 @@
 ## About
-This is a portal site for pets.
-You can meet new family on this site.
-check out this on [Heroku](https://matchingpet.herokuapp.com/)  
-<img width="774" alt="スクリーンショット 2021-01-11 14 40 08" src="https://user-images.githubusercontent.com/62239012/104149811-05050f80-541b-11eb-939b-05f764c982fc.png">
+This is a bulletin board for travel.
+You can get lots of imformation on this site.
+check out this on [firebase](https://your-memories-dd52e.web.app/)  
+<img width="596" alt="スクリーンショット 2021-01-11 14 52 35" src="https://user-images.githubusercontent.com/62239012/104150299-d38d4380-541c-11eb-8cf6-8e79ebbe19ac.png">
 
 ## Development
 I made this site by these contents.
@@ -13,14 +13,11 @@ I made this site by these contents.
     - JavaScript 
     - jQuery
 - Backend
-    - PHP
-    - Laravel
+    - firebase(Authentication,Realtime Database,Cloud Storage)
 - Database
-    - MySQL
+    - NoSQL(firebase)
 - Infrastructure
     - AWS(EC2)
-- Others
-    - AWS(S3)
 
 ## Contact 
 If you have an interest in this site , please check out [my portfolio](https://portfolio-f4b3a.web.app/) too.
