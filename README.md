@@ -35,7 +35,7 @@ With an opportunity, a hobby is a trip. I like acting without deciding a destina
 ## Impressions
 As it was a bulletin board, I regarded that was stressless that page transition was not carried out at every thing, contribution updated in real time as important and made service centering on RealtimeDatabase of firebase.
 There were many points that were different from the development in Laravel including the thing that the delivery of the variable, the additional way of data, a way of the preservation of the photograph, a database were not RDB, and was schemaless and had a hard fight. However, I made trial and error and was able to develop it because a document was arranged clearly.
-In addition, I was impressed by what could exchange data only by a JavaScript because I pushed forward development in Laravel until just before that by using BaaS. Based on each difference, I wanted to come to be able to use it properly depending on a use.
+In addition, **I was impressed by what could exchange data only by a JavaScript because I pushed forward development in Laravel until just before that by using BaaS.** Based on each difference, I wanted to come to be able to use it properly depending on a use.
 As I like traveling and often go, I load it with the meaning leaving the memory for and want to utilize service.
 
 ## Contact 
